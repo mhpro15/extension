@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Website Alert",
+  "version": "1.0",
+  "description": "Alerts users when they visit websites",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage",
+    "webRequest",
+    "webNavigation",
+    "tabGroups",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
